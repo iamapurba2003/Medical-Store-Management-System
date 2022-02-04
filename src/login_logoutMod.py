@@ -4,8 +4,7 @@ from database import db
 cur = db.cursor()
 
 # Queries
-Queries = [
-]
+Queries = []
 
 
 def login(user_name: str = '', user_password: str = '') -> bool:
@@ -37,7 +36,27 @@ def login(user_name: str = '', user_password: str = '') -> bool:
             
             
 def logout(user_name: str = ''):
-    print(login(user_name))
+    if len(user_name) > 0:
+        cur.execute(f"SELECT user_name FROM userStatus WHERE user_name{user_name}'")
+        rows = cur.fetchall()
+        if not rows:
+            return "User Does not Exists"
+        else:
+            cur.execute(f"SELECT status AS userStatus FROM userStatus WHERE user_name='{user_name}'")
+            for x in cur:
+                data = x[0]
+            if data == "true":
+                cur.execute(f"UPDATE userStatus SET status='true' WHERE user_name='{user_name}'")
+                db.commit()
+                cur.execute(f"SELECT status from userStatus WHERE user_name='{user_name}'")
+                for x in cur:
+                    if x[0] == 'true':
+                        return f"User not Logged Out Successfully. Try Again!"
+                    else:
+                        return f"User Logged out Successfully."
+                        
+    else:
+        return "Incorrect Username"
     pass
 
 
