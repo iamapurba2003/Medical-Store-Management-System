@@ -34,8 +34,8 @@ for val in Queries:
 # cur.executemany(Query, Medicines)
 # db.commit()
 
-cur.execute("SHOW TABLES")
-for x in cur:print(x)
+# cur.execute("SHOW TABLES")
+# for x in cur:print(x)
 
 
 def main():
