@@ -23,7 +23,7 @@ Queries = [
     # ("CREATE TABLE IF NOT EXISTS account(user_name VARCHAR(60), password VARCHAR(50), name VARCHAR(30))")
 ]
 
-# Query = "INSERT INTO medicines(name, price, description, quantity) VALUES (%s, %s, %s, %s)"
+Query = "INSERT INTO medicines(name, price, description, quantity) VALUES (%s, %s, %s, %s)"
 
 
 # Execution of Queries
@@ -31,8 +31,8 @@ for val in Queries:
     cur.execute(val)
 
 # Inserted Medicines into Table 
-# cur.executemany(Query, Medicines)
-# db.commit()
+cur.executemany(Query, Medicines)
+db.commit()
 
 # cur.execute("SHOW TABLES")
 # for x in cur:print(x)

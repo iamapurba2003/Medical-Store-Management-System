@@ -38,7 +38,8 @@ def get_user_logged_status(user_name: str = '') -> bool:
 
 
 def main():
-    print(get_user_logged_status('Apurba Ghosh'))
+    # print(get_user_logged_status('Apurba Ghosh'))
+    pass
 
 
 # Driver Code
