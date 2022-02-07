@@ -1,6 +1,7 @@
 # Menu to be Shown to User
 def menu():
     print(""" 
+    0. q to Quit
     1. Available Medicines
     2. Order Medicines
     3. Login

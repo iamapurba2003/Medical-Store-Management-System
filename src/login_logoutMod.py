@@ -56,6 +56,9 @@ def logout(user_name: str = ''):
                         return f"User not Logged Out Successfully. Try Again!"
                     else:
                         return f"User Logged out Successfully."
+            
+            else:
+                return "User already logged out"
                         
     else:
         return "Incorrect Username"
