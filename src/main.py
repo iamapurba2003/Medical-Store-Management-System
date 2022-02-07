@@ -63,7 +63,15 @@ def main(userInput:int=0):
             print(f'Your Name: {a[2]}\nYour username:{a[0]}')
             print()
         else: print(a)
-        
+
+    elif userInput == 6:
+        uFullName = input('Enter your full name: ')
+        uName1 = input('Enter a username: ')
+        uPass1 = getpass.getpass('Enter a password: ')
+        a = register_user(uName1, uPass1, uFullName)
+        if type(a) == tuple: print(f'You have been registered successfully!')
+        else: print(a)
+
 # Driver Code
 if __name__ == "__main__":
     menu()
