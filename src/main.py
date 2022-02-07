@@ -4,7 +4,7 @@ import getpass
 # App specific import(s)
 from database import db
 from loginStatus import get_user_logged_status
-from login_logoutMod import login, logout
+from login_logoutMod import login, logout, register
 from medicineStock import Medicines
 from userAccount import register_user, get_user
 from menu import menu
@@ -68,6 +68,7 @@ def main(userInput:int=0):
         uFullName = input('Enter your full name: ')
         uName1 = input('Enter a username: ')
         uPass1 = getpass.getpass('Enter a password: ')
+        register(uName1)
         a = register_user(uName1, uPass1, uFullName)
         if type(a) == tuple: print(f'You have been registered successfully!')
         else: print(a)

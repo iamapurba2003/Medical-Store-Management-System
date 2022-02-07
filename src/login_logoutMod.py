@@ -4,7 +4,9 @@ from database import db
 cur = db.cursor()
 
 # Queries
-Queries = []
+Queries = [
+    ("INSERT INTO userStatus(user_name, status) VALUES (%s, %s)")
+]
 
 
 def login(user_name: str = '', user_password: str = '') -> bool:
@@ -59,6 +61,14 @@ def logout(user_name: str = ''):
         return "Incorrect Username"
     pass
 
+def register(user_name: str = ''):
+    if len(user_name) > 0:
+        cur.execute(Queries[0], (user_name, 'false'))
+        for x in cur:
+            print(x)
+        pass
+    else:
+        pass
 
 def main():
     logout('iamapurba2003')

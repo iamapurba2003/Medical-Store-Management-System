@@ -31,8 +31,8 @@ for val in Queries:
     cur.execute(val)
 
 # Inserted Medicines into Table 
-cur.executemany(Query, Medicines)
-db.commit()
+# cur.executemany(Query, Medicines)
+# db.commit()
 
 # cur.execute("SHOW TABLES")
 # for x in cur:print(x)
