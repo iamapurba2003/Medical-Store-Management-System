@@ -18,7 +18,7 @@ cur = db.cursor()
 
 
 
-def main(userInput:int=0):
+def main():
     menu()
     userInput = input("Enter Your Choice? ")
     print()
