@@ -11,6 +11,9 @@ Queries = [
 
 
 # Execution of Queries
+for query in Queries:
+    cur.execute(Queries[0])
+
 
 
 # Registers a User
@@ -40,6 +43,9 @@ def get_user(user_name: str = '', user_password: str = '') -> tuple:
 
 
 def main():
+    # register_user('iamapurba2003', '1234', 'Apurba Ghosh')
+    # register_user('himangshuishere', 'password#$34', 'Himangshu De')
+    # register_user('thearunodaya', 'arunodaya@123#$34', 'Arunodaya Biswas')
     pass
 
 
